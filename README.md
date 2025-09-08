@@ -47,7 +47,7 @@ _Add screenshots of your portfolio here_
 
 ## 📩 Contact Me
 If you’d like to collaborate or have any questions, feel free to reach out:
-- **Email:** [keertibhatnagar.work@gmail,com]
+- **Email:** [keertibhatnagar.work@gmail.com]
 - **LinkedIn:** [Your LinkedIn Profile](https://linkedin.com/in/keerti-bhatnagar/)
 - **GitHub:** [Your GitHub Profile](https://github.com/keertibhatnagar-it)
 
