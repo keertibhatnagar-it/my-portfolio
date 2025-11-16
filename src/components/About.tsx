@@ -2,7 +2,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <section className="h-[100vh] max-w-[1000px]  flex justify-start mx-auto gap-[90px]">
+    <section id="about" className="h-[100vh] max-w-[1000px]  flex justify-start mx-auto gap-[90px]">
       <div className="flex items-start justify-start  flex-col w-[65%]">
         <h2 className="text-2xl text-[var(--lightest-slate)] font-bold ">
           About Me

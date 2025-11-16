@@ -3,7 +3,7 @@ import Button from "./Button";
 
 const Banner = () => {
   return (
-    <section className="h-[calc(100vh-90px)] max-w-[1000px] flex items-start justify-start pt-[100px] flex-col  mx-auto">
+    <section id="home" className="h-[calc(100vh-90px)] max-w-[1000px] flex items-start justify-start pt-[100px] flex-col  mx-auto">
       <p className="pl-1 pb-3 font-mono text-base text-[var(--primary-green)]">
         Hi, My name is
       </p>

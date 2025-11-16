@@ -48,16 +48,32 @@
   --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
 }
 
+/* Dark theme */
+.dark {
+  --background: #020c1b;
+  --primary-green: #64ffda;
+  --foreground: #ededed;
+}
+
+/* Fallback for prefers-color-scheme */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not(.light) {
     --background: #020c1b;
     --primary-green: #64ffda;
     --foreground: #ededed;
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-inter), var(--font-poppins), sans-serif;
+}
+
+.clip-hexagon {
+  clip-path: polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%);
 }
