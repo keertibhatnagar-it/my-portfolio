@@ -42,10 +42,13 @@ export default function ExperienceTabs() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section id="experience" className="h-[50vh] max-w-[1000px] flex justify-start mx-auto gap-[90px]">
+    <section
+      id="experience"
+      className="h-[50vh] max-w-[1000px] flex justify-start mx-auto gap-[90px]"
+    >
       <div className="flex flex-col w-full">
         <h2 className="text-2xl text-[var(--lightest-slate)] font-bold mb-4">
-          Where I've Worked
+          Where I&apos;ve Worked
         </h2>
 
         <div className="grid grid-cols-[1fr_3fr] text-[var(--lightest-slate)] gap-6 pt-[25px]">
@@ -96,7 +99,10 @@ export default function ExperienceTabs() {
               >
                 <h3 className="text-[17px] font-semibold pb-1">
                   {experiences[activeIndex].title}{" "}
-                  <span style={{ color: "var(--primary-green)" }} className="text-[18px]">
+                  <span
+                    style={{ color: "var(--primary-green)" }}
+                    className="text-[18px]"
+                  >
                     @ {experiences[activeIndex].company}
                   </span>
                 </h3>

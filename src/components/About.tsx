@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const About = () => {
@@ -87,8 +88,11 @@ const About = () => {
       </div>
       <div className="w-[32%] pt-[65px]">
         <div className="w-full h-[320px] border border-[var(--primary-green)] bg-[#0f1624] flex justify-center items-center overflow-hidden rounded-md">
-          <img
+          <Image
             src="/media/keerti_profile_image.jpeg"
+            alt="Keerti Profile Image"
+            width={500}
+            height={500}
             className="object-cover w-full h-full rounded-md"
           />
         </div>

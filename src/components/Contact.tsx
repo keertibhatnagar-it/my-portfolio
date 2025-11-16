@@ -9,15 +9,15 @@ const Contact = () => {
     >
       <div className="flex flex-col items-center gap-4 max-w-[600px]">
         <p className="text-sm font-mono text-[var(--primary-green)]">
-          What's Next?
+          What&apos;s Next?
         </p>
         <h2 className="text-4xl md:text-5xl font-bold text-[var(--lightest-slate)] text-center">
           Get In Touch
         </h2>
         <p className="text-center text-[var(--slate)] leading-relaxed pt-4">
-          I'm currently looking for new opportunities, my inbox is always open.
-          Whether you have a question or just want to say hi, I'll try my best
-          to get back to you!
+          I&apos;m currently looking for new opportunities, my inbox is always
+          open. Whether you have a question or just want to say hi, I&apos;ll
+          try my best to get back to you!
         </p>
         <div className="pt-8">
           <a href="mailto:keertibhatnagar.work@gmail.com">
