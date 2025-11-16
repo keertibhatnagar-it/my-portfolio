@@ -4,7 +4,7 @@ const Button = ({ text }: { text: string }) => {
 
   // Common classes for both a and button
   const buttonClasses =
-    "cursor-pointer relative text-[var(--primary-green)] text-xs font-mono px-6 py-3 border-1 border-[var(--primary-green)] rounded-sm overflow-hidden transition-all duration-300 group shadow-2xl shadow-green-500";
+    "cursor-pointer relative text-[var(--primary-green)] text-xs sm:text-sm font-mono px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 border-1 border-[var(--primary-green)] rounded-sm overflow-hidden transition-all duration-300 group shadow-2xl shadow-green-500";
 
   return text === "Resume" ? (
     <a

@@ -44,22 +44,22 @@ export default function ExperienceTabs() {
   return (
     <section
       id="experience"
-      className="h-[50vh] max-w-[1000px] flex justify-start mx-auto gap-[90px]"
+      className="min-h-screen max-w-[1000px] flex justify-start mx-auto px-4 sm:px-6 md:px-0 py-12 sm:py-16 md:py-20"
     >
       <div className="flex flex-col w-full">
-        <h2 className="text-2xl text-[var(--lightest-slate)] font-bold mb-4">
+        <h2 className="text-xl sm:text-2xl md:text-3xl text-[var(--lightest-slate)] font-bold mb-6 sm:mb-8">
           Where I&apos;ve Worked
         </h2>
 
-        <div className="flex flex-col md:grid md:grid-cols-[1fr_3fr] text-[var(--lightest-slate)] gap-4 md:gap-6 pt-4 md:pt-[25px]">
+        <div className="flex flex-col md:grid md:grid-cols-[1fr_3fr] text-[var(--lightest-slate)] gap-4 sm:gap-6 md:gap-8 pt-4 md:pt-[25px]">
           {/* Mobile: Horizontal Scroll Tabs */}
-          <div className="flex md:flex-col overflow-x-auto md:overflow-visible border-b md:border-b-0 md:border-l-2 border-white/10 relative md:self-start pb-2 md:pb-0">
+          <div className="flex md:flex-col overflow-x-auto md:overflow-visible border-b md:border-b-0 md:border-l-2 border-white/10 relative md:self-start pb-2 md:pb-0 scrollbar-hide">
             <div className="flex md:flex-col min-w-max md:min-w-0">
               {experiences.map((exp, index) => (
                 <button
                   key={exp.company}
                   onClick={() => setActiveIndex(index)}
-                  className={`text-left px-3 md:px-4 transition-colors font-mono text-[10px] sm:text-xs py-3 md:py-5 duration-300 flex items-center whitespace-nowrap md:whitespace-normal ${
+                  className={`text-left px-4 sm:px-5 md:px-4 transition-colors font-mono text-[11px] sm:text-xs md:text-sm py-3 sm:py-4 md:py-5 duration-300 flex items-center whitespace-nowrap md:whitespace-normal ${
                     index === activeIndex
                       ? "bg-white/5 md:border-l-2"
                       : "hover:text-white"
@@ -99,26 +99,26 @@ export default function ExperienceTabs() {
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.4 }}
               >
-                <h3 className="text-base sm:text-[17px] font-semibold pb-1">
+                <h3 className="text-base sm:text-lg md:text-[17px] lg:text-xl font-semibold pb-1 sm:pb-2">
                   {experiences[activeIndex].title}{" "}
                   <span
                     style={{ color: "var(--primary-green)" }}
-                    className="text-[18px]"
+                    className="text-base sm:text-lg md:text-[18px]"
                   >
                     @ {experiences[activeIndex].company}
                   </span>
                 </h3>
                 <p
-                  className="text-[11px] sm:text-[12px] mb-3 md:mb-4 font-mono pb-1 leading-relaxed"
+                  className="text-[11px] sm:text-[12px] md:text-[13px] mb-4 sm:mb-5 md:mb-6 font-mono pb-1 leading-relaxed"
                   style={{ color: "var(--slate)" }}
                 >
                   {experiences[activeIndex].duration}
                 </p>
-                <ul className="space-y-2 list-none font-inter text-sm sm:text-[15px] text-[var(--slate)] leading-relaxed">
+                <ul className="space-y-2 sm:space-y-3 list-none font-inter text-sm sm:text-[14px] md:text-[15px] text-[var(--slate)] leading-relaxed">
                   {experiences[activeIndex].bullets.map((point, i) => (
                     <li
                       key={i}
-                      className="flex items-start gap-2 relative pl-5 before:content-['▶'] before:text-[var(--primary-green)] before:text-[10px] sm:before:text-[12px] before:font-mono before:absolute before:left-0"
+                      className="flex items-start gap-2 relative pl-5 sm:pl-6 before:content-['▶'] before:text-[var(--primary-green)] before:text-[10px] sm:before:text-[12px] before:font-mono before:absolute before:left-0"
                     >
                       <span>{point}</span>
                     </li>
