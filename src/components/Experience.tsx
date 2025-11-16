@@ -42,10 +42,13 @@ export default function ExperienceTabs() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section id="experience" className="min-h-[50vh] max-w-[1000px] flex justify-start mx-auto gap-4 md:gap-[90px] px-4 sm:px-6 md:px-0 py-12 md:py-0">
+    <section
+      id="experience"
+      className="h-[50vh] max-w-[1000px] flex justify-start mx-auto gap-[90px]"
+    >
       <div className="flex flex-col w-full">
-        <h2 className="text-xl sm:text-2xl text-[var(--lightest-slate)] font-bold mb-6 md:mb-4">
-          Where I've Worked
+        <h2 className="text-2xl text-[var(--lightest-slate)] font-bold mb-4">
+          Where I&apos;ve Worked
         </h2>
 
         <div className="flex flex-col md:grid md:grid-cols-[1fr_3fr] text-[var(--lightest-slate)] gap-4 md:gap-6 pt-4 md:pt-[25px]">
@@ -98,7 +101,10 @@ export default function ExperienceTabs() {
               >
                 <h3 className="text-base sm:text-[17px] font-semibold pb-1">
                   {experiences[activeIndex].title}{" "}
-                  <span style={{ color: "var(--primary-green)" }} className="text-base sm:text-[18px]">
+                  <span
+                    style={{ color: "var(--primary-green)" }}
+                    className="text-[18px]"
+                  >
                     @ {experiences[activeIndex].company}
                   </span>
                 </h3>

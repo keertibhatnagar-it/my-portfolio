@@ -1,9 +1,11 @@
-const Work = () => {
+import Image from "next/image";
 
-const projects = [
+const Work = () => {
+  const projects = [
     {
       title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution built with Next.js, featuring real-time inventory management, secure payment processing, and an intuitive admin dashboard. Integrated with Stripe for payments and Keycloak for authentication.",
+      description:
+        "A full-stack e-commerce solution built with Next.js, featuring real-time inventory management, secure payment processing, and an intuitive admin dashboard. Integrated with Stripe for payments and Keycloak for authentication.",
       tech: ["Next.js", "TypeScript", "Stripe", "Keycloak", "PostgreSQL"],
       image: "/api/placeholder/600/400",
       github: "#",
@@ -12,7 +14,8 @@ const projects = [
     },
     {
       title: "Task Management App",
-      description: "A collaborative task management application with real-time updates using WebSockets. Features include drag-and-drop task organization, team collaboration, and progress tracking with beautiful UI/UX.",
+      description:
+        "A collaborative task management application with real-time updates using WebSockets. Features include drag-and-drop task organization, team collaboration, and progress tracking with beautiful UI/UX.",
       tech: ["React", "Node.js", "WebSockets", "MongoDB", "Express"],
       image: "/api/placeholder/600/400",
       github: "#",
@@ -21,7 +24,8 @@ const projects = [
     },
     {
       title: "Portfolio Website",
-      description: "A modern, responsive portfolio website showcasing projects and skills. Built with Next.js and Tailwind CSS, featuring smooth animations, dark mode support, and optimized performance with SEO best practices.",
+      description:
+        "A modern, responsive portfolio website showcasing projects and skills. Built with Next.js and Tailwind CSS, featuring smooth animations, dark mode support, and optimized performance with SEO best practices.",
       tech: ["Next.js", "React", "Tailwind CSS", "TypeScript", "Framer Motion"],
       image: "/api/placeholder/600/400",
       github: "#",
@@ -30,10 +34,13 @@ const projects = [
     },
   ];
   return (
-    <section id="work" className="min-h-[100vh] max-w-[1000px] flex flex-col justify-start mx-auto py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-0">
-      <div className="flex items-center gap-3 mb-8 sm:mb-12 md:mb-16">
-        <h2 className="text-xl sm:text-2xl text-[var(--lightest-slate)] font-bold">
-          Some Things I've Built
+    <section
+      id="work"
+      className="min-h-[100vh] max-w-[1000px] flex flex-col justify-start mx-auto py-20"
+    >
+      <div className="flex items-center gap-3 mb-16">
+        <h2 className="text-2xl text-[var(--lightest-slate)] font-bold">
+          Some Things I&apos;ve Built
         </h2>
         <div className="flex-1 h-[1px] bg-[var(--lightest-navy)]"></div>
       </div>
@@ -54,10 +61,11 @@ const projects = [
                 className="block relative z-10 w-full h-[200px] sm:h-[250px] md:h-[300px] bg-[var(--light-navy)] rounded overflow-hidden border border-[var(--primary-green)]/20 hover:border-[var(--primary-green)]/50 transition-all duration-300"
               >
                 <div className="w-full h-full bg-gradient-to-br from-[var(--primary-green)]/10 to-[var(--light-navy)] flex items-center justify-center">
-                  <img
+                  <Image
                     src="/project-placeholder.svg"
                     alt={project.title}
-                    className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                    fill
+                    className="object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
                   />
                 </div>
                 <div className="absolute inset-0 bg-[var(--primary-green)]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -140,4 +148,3 @@ const projects = [
 };
 
 export default Work;
-

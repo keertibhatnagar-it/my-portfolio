@@ -1,10 +1,14 @@
+import Image from "next/image";
 import React from "react";
 
 const About = () => {
   return (
-    <section id="about" className="min-h-[100vh] max-w-[1000px] flex flex-col md:flex-row justify-start mx-auto gap-8 md:gap-[90px] px-4 sm:px-6 md:px-0 py-12 md:py-0">
-      <div className="flex items-start justify-start flex-col w-full md:w-[65%]">
-        <h2 className="text-xl sm:text-2xl text-[var(--lightest-slate)] font-bold">
+    <section
+      id="about"
+      className="h-[100vh] max-w-[1000px]  flex justify-start mx-auto gap-[90px]"
+    >
+      <div className="flex items-start justify-start  flex-col w-[65%]">
+        <h2 className="text-2xl text-[var(--lightest-slate)] font-bold ">
           About Me
         </h2>
         <div className="pt-4 sm:pt-[25px] text-[var(--slate)] flex justify-start gap-3 flex-col leading-relaxed text-sm sm:text-base">
@@ -14,8 +18,8 @@ const About = () => {
             curiosity—experimenting with{" "}
             <span className="text-[var(--primary-green)]">HTML & CSS</span>,
             tweaking small UI components, and eventually diving into the world
-            of
-            {" "}<span className="text-[var(--primary-green)]">
+            of{" "}
+            <span className="text-[var(--primary-green)]">
               React and Next.js
             </span>
             . Since then, I've built{" "}
@@ -35,23 +39,23 @@ const About = () => {
             <span className="text-[var(--primary-green)]">
               seamless digital experiences
             </span>{" "}
-            and solving complex frontend challenges. From implementing
-            {" "}<span className="text-[var(--primary-green)]">
+            and solving complex frontend challenges. From implementing{" "}
+            <span className="text-[var(--primary-green)]">
               Keycloak authentication
             </span>{" "}
             to crafting{" "}
             <span className="text-[var(--primary-green)]">
               dynamic CMS solutions
             </span>
-            , I focus on building
-            {" "}<span className="text-[var(--primary-green)]">
+            , I focus on building{" "}
+            <span className="text-[var(--primary-green)]">
               secure, scalable, and user-friendly products
             </span>
             .
           </p>
           <p>
-            Currently, I'm pushing boundaries with
-            {" "}<span className="text-[var(--primary-green)]">
+            Currently, I’m pushing boundaries with{" "}
+            <span className="text-[var(--primary-green)]">
               modern frontend technologies
             </span>
             , ensuring{" "}
@@ -82,9 +86,15 @@ const About = () => {
           </ul>
         </div>
       </div>
-      <div className="w-full md:w-[32%] pt-8 md:pt-[65px] flex justify-center md:justify-start">
-        <div className="w-full max-w-[280px] md:max-w-none h-[250px] sm:h-[280px] md:h-[320px] border border-[var(--primary-green)]/20 flex justify-center items-center rounded">
-          Photo
+      <div className="w-[32%] pt-[65px]">
+        <div className="w-full h-[320px] border border-[var(--primary-green)] bg-[#0f1624] flex justify-center items-center overflow-hidden rounded-md">
+          <Image
+            src="/media/keerti_profile_image.jpeg"
+            alt="Keerti Profile Image"
+            width={500}
+            height={500}
+            className="object-cover w-full h-full rounded-md"
+          />
         </div>
       </div>
     </section>
