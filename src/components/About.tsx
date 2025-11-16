@@ -87,7 +87,7 @@ const About = () => {
         </div>
       </div>
       <div className="w-full md:w-[32%] pt-0 md:pt-[65px] flex justify-center md:justify-start">
-        <div className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-none md:w-full h-[250px] sm:h-[280px] md:h-[320px] border border-[var(--primary-green)] bg-[#0f1624] flex justify-center items-center overflow-hidden rounded-md">
+        <div className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-none md:w-full h-[250px] sm:h-[280px] md:h-[320px] border border-[var(--primary-green)] bg-[var(--light-navy)] flex justify-center items-center overflow-hidden rounded-md">
           <Image
             src="/media/keerti_profile_image.jpeg"
             alt="Keerti Profile Image"

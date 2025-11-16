@@ -8,11 +8,11 @@ import { cookies } from "next/headers";
 import Work from "@/components/Work";
 const Home = async () => {
   const cookieStore = await cookies();
-  const theme = cookieStore.get("theme")?.value || "light";
+  const theme = cookieStore.get("theme")?.value || "dark";
   console.log("theme", theme);
   return (
     <>
-      <CursorShadow theme={"dark"} />
+      <CursorShadow theme={theme} />
       <Navbar />
       <Banner />
       <About />

@@ -4,7 +4,7 @@ import Button from "./Button";
 import { useEffect, useState } from "react";
 
 const Navbar = () => {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [theme, setTheme] = useState<"light" | "dark">("dark");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -125,7 +125,7 @@ const Navbar = () => {
               </svg>
             )}
             <span className="absolute inset-0 overflow-hidden">
-              <span className="absolute w-[150%] h-[150%] top-0 left-[-75%] bg-gradient-to-r from-transparent via-white/30 to-transparent rotate-45 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-600 ease-in-out"></span>
+              <span className="absolute w-[150%] h-[130%] top-0 left-[-75%] bg-gradient-to-r from-transparent via-white/30 to-transparent rotate-45 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-600 ease-in-out"></span>
             </span>
           </button>
           <Button text="Resume" />

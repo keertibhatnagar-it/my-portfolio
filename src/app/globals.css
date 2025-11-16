@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Dark theme colors (default) */
+  --background: #020c1b;
+  --foreground: #ededed;
   --dark-navy: #020c1b;
   --navy: #0a192f;
   --light-navy: #112240;
@@ -13,7 +14,7 @@
   --light-slate: #a8b2d1;
   --lightest-slate: #ccd6f6;
   --white: #e6f1ff;
-  --primary-green: #00a86b;
+  --primary-green: #64ffda;
   --green-tint: rgba(100,255,218,0.1);
   --pink: #f57dff;
   --blue: #57cbff;
@@ -48,19 +49,59 @@
   --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
 }
 
+/* Light theme specific overrides */
+.light {
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+  --dark-navy: #020c1b;
+  --navy: #0a192f;
+  --light-navy: #f5f7fa;
+  --lightest-navy: #e8ecf1;
+  --navy-shadow: rgba(2,12,27,0.1);
+  --dark-slate: #2d3748;
+  --slate: #4a5568;
+  --light-slate: #718096;
+  --lightest-slate: #1a202c;
+  --white: #ffffff;
+  --primary-green: #00d084;
+  --green-tint: rgba(0,208,132,0.1);
+}
+
 /* Dark theme */
 .dark {
   --background: #020c1b;
-  --primary-green: #64ffda;
   --foreground: #ededed;
+  --dark-navy: #020c1b;
+  --navy: #0a192f;
+  --light-navy: #112240;
+  --lightest-navy: #233554;
+  --navy-shadow: rgba(2,12,27,0.7);
+  --dark-slate: #495670;
+  --slate: #8892b0;
+  --light-slate: #a8b2d1;
+  --lightest-slate: #ccd6f6;
+  --white: #e6f1ff;
+  --primary-green: #64ffda;
+  --green-tint: rgba(100,255,218,0.1);
 }
 
 /* Fallback for prefers-color-scheme */
 @media (prefers-color-scheme: dark) {
   :root:not(.light) {
     --background: #020c1b;
-    --primary-green: #64ffda;
     --foreground: #ededed;
+    --dark-navy: #020c1b;
+    --navy: #0a192f;
+    --light-navy: #112240;
+    --lightest-navy: #233554;
+    --navy-shadow: rgba(2,12,27,0.7);
+    --dark-slate: #495670;
+    --slate: #8892b0;
+    --light-slate: #a8b2d1;
+    --lightest-slate: #ccd6f6;
+    --white: #e6f1ff;
+    --primary-green: #64ffda;
+    --green-tint: rgba(100,255,218,0.1);
   }
 }
 

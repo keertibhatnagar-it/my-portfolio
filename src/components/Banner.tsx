@@ -13,7 +13,7 @@ const Banner = () => {
       <h1 className="py-2 sm:py-3 md:py-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-poppins font-extrabold text-[var(--slate)] leading-tight">
         I build things for the web.
       </h1>
-      <p className="pt-3 sm:pt-4 md:pt-5 pb-6 sm:pb-8 md:pb-10 text-xs sm:text-sm md:text-base lg:text-lg font-inter text-[var(--slate)] max-w-full sm:max-w-[95%] md:max-w-[90%] lg:max-w-[83%] leading-relaxed"><span className=" text-[var(--primary-green)]">Bringing ideas to life with code!</span> As a frontend developer, I craft seamless, interactive, and high-performance digital experiences using React.js, Next.js, and modern web technologies. Passionate about security, scalability, and accessibility, I strive to build products that are not just functional but also delightful.</p>
+      <p className="pt-3 sm:pt-4 md:pt-5 pb-6 sm:pb-8 md:pb-10 text-xs sm:text-sm md:text-base font-inter text-[var(--slate)] max-w-full sm:max-w-[95%] md:max-w-[90%] lg:max-w-[83%] leading-relaxed"><span className=" text-[var(--primary-green)]">Bringing ideas to life with code!</span> As a frontend developer, I craft seamless, interactive, and high-performance digital experiences using React.js, Next.js, and modern web technologies. Passionate about security, scalability, and accessibility, I strive to build products that are not just functional but also delightful.</p>
 
      <Button text="Work with me!"/>
     </section>
