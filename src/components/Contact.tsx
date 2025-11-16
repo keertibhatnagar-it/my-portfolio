@@ -3,10 +3,13 @@ import Button from "./Button";
 
 const Contact = () => {
   return (
-    <section id="contact" className="min-h-[100vh] max-w-[1000px] flex flex-col justify-center items-center mx-auto py-20">
+    <section
+      id="contact"
+      className="min-h-[100vh] max-w-[1000px] flex flex-col justify-center items-center mx-auto py-20"
+    >
       <div className="flex flex-col items-center gap-4 max-w-[600px]">
         <p className="text-sm font-mono text-[var(--primary-green)]">
-          04. What's Next?
+          What's Next?
         </p>
         <h2 className="text-4xl md:text-5xl font-bold text-[var(--lightest-slate)] text-center">
           Get In Touch
@@ -17,7 +20,7 @@ const Contact = () => {
           to get back to you!
         </p>
         <div className="pt-8">
-          <a href="mailto:your.email@example.com">
+          <a href="mailto:keertibhatnagar.work@gmail.com">
             <Button text="Say Hello" />
           </a>
         </div>
@@ -26,7 +29,7 @@ const Contact = () => {
       <div className="flex flex-col items-center gap-6 mt-20 pt-20 border-t border-[var(--lightest-navy)] w-full">
         <div className="flex gap-6">
           <a
-            href="https://github.com"
+            href="https://github.com/keertibhatnagar-it"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[var(--slate)] hover:text-[var(--primary-green)] transition-colors"
@@ -47,7 +50,7 @@ const Contact = () => {
             </svg>
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/keerti-bhatnagar/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[var(--slate)] hover:text-[var(--primary-green)] transition-colors"
@@ -69,7 +72,7 @@ const Contact = () => {
               <circle cx="4" cy="4" r="2"></circle>
             </svg>
           </a>
-          <a
+          {/* <a
             href="https://twitter.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -89,9 +92,9 @@ const Contact = () => {
             >
               <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
             </svg>
-          </a>
+          </a> */}
           <a
-            href="mailto:your.email@example.com"
+            href="mailto:keertibhatnagar.work@gmail.com"
             className="text-[var(--slate)] hover:text-[var(--primary-green)] transition-colors"
             aria-label="Email"
           >
@@ -120,4 +123,3 @@ const Contact = () => {
 };
 
 export default Contact;
-

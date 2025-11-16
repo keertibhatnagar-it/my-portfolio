@@ -2,7 +2,10 @@ import React from "react";
 
 const About = () => {
   return (
-    <section id="about" className="h-[100vh] max-w-[1000px]  flex justify-start mx-auto gap-[90px]">
+    <section
+      id="about"
+      className="h-[100vh] max-w-[1000px]  flex justify-start mx-auto gap-[90px]"
+    >
       <div className="flex items-start justify-start  flex-col w-[65%]">
         <h2 className="text-2xl text-[var(--lightest-slate)] font-bold ">
           About Me
@@ -14,8 +17,8 @@ const About = () => {
             curiosity—experimenting with{" "}
             <span className="text-[var(--primary-green)]">HTML & CSS</span>,
             tweaking small UI components, and eventually diving into the world
-            of
-            {" "}<span className="text-[var(--primary-green)]">
+            of{" "}
+            <span className="text-[var(--primary-green)]">
               React and Next.js
             </span>
             . Since then, I’ve built{" "}
@@ -35,23 +38,23 @@ const About = () => {
             <span className="text-[var(--primary-green)]">
               seamless digital experiences
             </span>{" "}
-            and solving complex frontend challenges. From implementing
-            {" "}<span className="text-[var(--primary-green)]">
+            and solving complex frontend challenges. From implementing{" "}
+            <span className="text-[var(--primary-green)]">
               Keycloak authentication
             </span>{" "}
             to crafting{" "}
             <span className="text-[var(--primary-green)]">
               dynamic CMS solutions
             </span>
-            , I focus on building
-            {" "}<span className="text-[var(--primary-green)]">
+            , I focus on building{" "}
+            <span className="text-[var(--primary-green)]">
               secure, scalable, and user-friendly products
             </span>
             .
           </p>
           <p>
-            Currently, I’m pushing boundaries with
-            {" "}<span className="text-[var(--primary-green)]">
+            Currently, I’m pushing boundaries with{" "}
+            <span className="text-[var(--primary-green)]">
               modern frontend technologies
             </span>
             , ensuring{" "}
@@ -83,8 +86,11 @@ const About = () => {
         </div>
       </div>
       <div className="w-[32%] pt-[65px]">
-        <div className="w-full h-[320px] border border-[var-(--primary-green)] flex justify-center items-center">
-          Photo
+        <div className="w-full h-[320px] border border-[var(--primary-green)] bg-[#0f1624] flex justify-center items-center overflow-hidden rounded-md">
+          <img
+            src="/media/keerti_profile_image.jpeg"
+            className="object-cover w-full h-full rounded-md"
+          />
         </div>
       </div>
     </section>

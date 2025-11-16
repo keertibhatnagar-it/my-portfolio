@@ -1,4 +1,3 @@
-
 import About from "@/components/About";
 import Banner from "@/components/Banner";
 import CursorShadow from "@/components/CursorShadow";
@@ -7,21 +6,20 @@ import Experience from "@/components/Experience";
 import Contact from "@/components/Contact";
 import { cookies } from "next/headers";
 import Work from "@/components/Work";
-const Home = async()=> {
+const Home = async () => {
   const cookieStore = await cookies();
   const theme = cookieStore.get("theme")?.value || "light";
-  console.log("theme",theme)
+  // console.log("theme", theme);
   return (
     <>
-    <CursorShadow theme={"dark"}/>
+      <CursorShadow theme={"dark"} />
       <Navbar />
-      <Banner/>
-      <About/>
-      <Experience/>
-      <Work/>
-      <Contact/>
-     
+      <Banner />
+      <About />
+      <Experience />
+      <Work />
+      <Contact />
     </>
   );
-}
-export default Home
+};
+export default Home;
