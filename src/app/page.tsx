@@ -9,7 +9,7 @@ import Work from "@/components/Work";
 const Home = async () => {
   const cookieStore = await cookies();
   const theme = cookieStore.get("theme")?.value || "light";
-  // console.log("theme", theme);
+  console.log("theme", theme);
   return (
     <>
       <CursorShadow theme={"dark"} />
