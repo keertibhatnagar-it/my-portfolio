@@ -4,7 +4,8 @@ import Button from "./Button";
 import { useEffect, useState } from "react";
 
 const Navbar = () => {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [theme, setTheme] = useState<"light" | "dark">("dark");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     // Get initial theme from HTML element or cookie
@@ -24,6 +25,7 @@ const Navbar = () => {
         top: offsetPosition,
         behavior: "smooth"
       });
+      setIsMenuOpen(false); // Close menu on mobile after clicking
     }
   };
 
@@ -50,21 +52,23 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex justify-between items-center px-8 py-6 sticky top-0 z-50 bg-[var(--background)]/80 backdrop-blur-sm">
+    <nav className="flex justify-between items-center px-4 sm:px-6 md:px-8 lg:px-12 py-3 sm:py-4 md:py-5 lg:py-6 sticky top-0 z-50 bg-[var(--background)]/80 backdrop-blur-sm">
       <div className="flex justify-center items-center">
         {/* Hexagon Shape */}
-        <div className="w-10 h-10 relative cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+        <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 relative cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
           {/* Hexagon Background */}
           <div className="absolute inset-0 bg-[var(--primary-green)] clip-hexagon"></div>
           
           {/* Letter K */}
-          <div className="absolute inset-0 flex justify-center items-center text-[var(--dark-navy)] text-sm font-bold">
+          <div className="absolute inset-0 flex justify-center items-center text-[var(--dark-navy)] text-xs sm:text-sm font-bold">
             K
           </div>
         </div>
       </div>
-      <div className="flex justify-end gap-10">
-        <ul className="flex gap-10 items-center font-mono text-sm">
+      
+      {/* Desktop Navigation */}
+      <div className="hidden md:flex justify-end gap-10">
+        <ul className="flex gap-6 lg:gap-10 items-center font-mono text-xs lg:text-sm">
           {["About", "Experience", "Work", "Contact"].map((item, index) => (
             <li
               key={index}
@@ -75,39 +79,39 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3 lg:gap-4">
           <button
             onClick={toggleTheme}
-            className="relative w-10 h-10 flex items-center justify-center rounded-sm border border-[var(--primary-green)]/30 hover:border-[var(--primary-green)] transition-colors group"
+            className="relative w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-sm border border-[var(--primary-green)]/30 hover:border-[var(--primary-green)] transition-colors group"
             aria-label="Toggle theme"
           >
             {theme === "light" ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
+                width="16"
+                height="16"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="text-[var(--primary-green)]"
+                className="text-[var(--primary-green)] sm:w-[18px] sm:h-[18px]"
               >
                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
               </svg>
             ) : (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
+                width="16"
+                height="16"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="text-[var(--primary-green)]"
+                className="text-[var(--primary-green)] sm:w-[18px] sm:h-[18px]"
               >
                 <circle cx="12" cy="12" r="5"></circle>
                 <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -121,11 +125,103 @@ const Navbar = () => {
               </svg>
             )}
             <span className="absolute inset-0 overflow-hidden">
-              <span className="absolute w-[150%] h-[150%] top-0 left-[-75%] bg-gradient-to-r from-transparent via-white/30 to-transparent rotate-45 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-600 ease-in-out"></span>
+              <span className="absolute w-[150%] h-[130%] top-0 left-[-75%] bg-gradient-to-r from-transparent via-white/30 to-transparent rotate-45 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-600 ease-in-out"></span>
             </span>
           </button>
           <Button text="Resume" />
         </div>
+      </div>
+
+      {/* Mobile Menu Button */}
+      <div className="flex items-center gap-3 md:hidden">
+        <button
+          onClick={toggleTheme}
+          className="relative w-8 h-8 flex items-center justify-center rounded-sm border border-[var(--primary-green)]/30 hover:border-[var(--primary-green)] transition-colors"
+          aria-label="Toggle theme"
+        >
+          {theme === "light" ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="text-[var(--primary-green)]"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          ) : (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="text-[var(--primary-green)]"
+            >
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          )}
+        </button>
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="flex flex-col gap-1.5 w-6 h-6 justify-center items-center"
+          aria-label="Toggle menu"
+        >
+          <span
+            className={`block w-6 h-0.5 bg-[var(--primary-green)] transition-all duration-300 ${
+              isMenuOpen ? "rotate-45 translate-y-2" : ""
+            }`}
+          ></span>
+          <span
+            className={`block w-6 h-0.5 bg-[var(--primary-green)] transition-all duration-300 ${
+              isMenuOpen ? "opacity-0" : ""
+            }`}
+          ></span>
+          <span
+            className={`block w-6 h-0.5 bg-[var(--primary-green)] transition-all duration-300 ${
+              isMenuOpen ? "-rotate-45 -translate-y-2" : ""
+            }`}
+          ></span>
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      <div
+        className={`fixed top-[73px] left-0 right-0 bg-[var(--background)]/95 backdrop-blur-sm border-b border-[var(--lightest-navy)] transition-all duration-300 md:hidden ${
+          isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        }`}
+      >
+        <ul className="flex flex-col px-4 py-4 font-mono text-sm">
+          {["About", "Experience", "Work", "Contact"].map((item, index) => (
+            <li
+              key={index}
+              onClick={() => handleNavClick(item)}
+              className="py-3 cursor-pointer text-[var(--slate)] hover:text-[var(--primary-green)] transition-colors border-b border-[var(--lightest-navy)] last:border-b-0"
+            >
+              {item}
+            </li>
+          ))}
+          <li className="pt-3">
+            <Button text="Resume" />
+          </li>
+        </ul>
       </div>
     </nav>
   );

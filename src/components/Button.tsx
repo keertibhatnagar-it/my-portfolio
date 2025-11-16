@@ -1,10 +1,29 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 const Button = ({ text }: { text: string }) => {
-  const theme = "dark";
-  const shineColor = theme === "dark" ? "via-white/30" : "via-gray-200";
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const checkTheme = () => {
+      setIsDark(document.documentElement.classList.contains("dark"));
+    };
+    checkTheme();
+    // Watch for theme changes
+    const observer = new MutationObserver(checkTheme);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+    return () => observer.disconnect();
+  }, []);
+
+  const shineColor = isDark ? "via-white/30" : "via-green-400/40";
 
   // Common classes for both a and button
   const buttonClasses =
-    "cursor-pointer relative text-[var(--primary-green)] text-xs font-mono px-6 py-3 border-1 border-[var(--primary-green)] rounded-sm overflow-hidden transition-all duration-300 group shadow-2xl shadow-green-500";
+    "cursor-pointer relative text-[var(--primary-green)] text-xs sm:text-sm font-mono px-4 sm:px-5 md:px-6 py-2 sm:py-2.2 border-1 border-[var(--primary-green)] rounded-sm overflow-hidden transition-all duration-300 group shadow-lg hover:shadow-xl transition-shadow";
 
   return text === "Resume" ? (
     <a
