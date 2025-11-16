@@ -1,7 +1,24 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const About = () => {
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const checkTheme = () => {
+      setIsDark(document.documentElement.classList.contains("dark"));
+    };
+    checkTheme();
+    // Watch for theme changes
+    const observer = new MutationObserver(checkTheme);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section
       id="about"
@@ -13,9 +30,9 @@ const About = () => {
         </h2>
         <div className="pt-4 sm:pt-6 md:pt-[25px] text-[var(--slate)] flex justify-start gap-3 sm:gap-4 flex-col leading-relaxed text-sm sm:text-base">
           <p>
-            Hello! I&apos;m Keerti, a frontend developer who loves bringing ideas to
-            life on the web. My journey into web development started with
-            curiosity—experimenting with{" "}
+            Hello! I&apos;m Keerti, a frontend developer who loves bringing
+            ideas to life on the web. My journey into web development started
+            with curiosity—experimenting with{" "}
             <span className="text-[var(--primary-green)]">HTML & CSS</span>,
             tweaking small UI components, and eventually diving into the world
             of{" "}
@@ -34,8 +51,8 @@ const About = () => {
             <span className="text-[var(--primary-green)]">WebSockets</span>.
           </p>
           <p>
-            Fast forward to today, I&apos;ve worked with startups and tech-driven
-            companies, engineering{" "}
+            Fast forward to today, I&apos;ve worked with startups and
+            tech-driven companies, engineering{" "}
             <span className="text-[var(--primary-green)]">
               seamless digital experiences
             </span>{" "}
@@ -63,7 +80,9 @@ const About = () => {
             and improving user engagement through thoughtful{" "}
             <span className="text-[var(--primary-green)]">UI/UX design</span>.
           </p>
-          <p>Here are a few technologies I&apos;ve been working with recently:</p>
+          <p>
+            Here are a few technologies I&apos;ve been working with recently:
+          </p>
 
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-2 sm:gap-x-4 gap-y-2 sm:gap-y-3 pt-3 sm:pt-4 text-[11px] sm:text-[12px] md:text-[13px] font-mono">
             {[
@@ -88,13 +107,23 @@ const About = () => {
       </div>
       <div className="w-full md:w-[32%] pt-0 md:pt-[65px] flex justify-center md:justify-start">
         <div className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-none md:w-full h-[250px] sm:h-[280px] md:h-[320px] border border-[var(--primary-green)] bg-[var(--light-navy)] flex justify-center items-center overflow-hidden rounded-md">
-          <Image
-            src="/media/keerti_profile_image.jpeg"
-            alt="Keerti Profile Image"
-            width={500}
-            height={500}
-            className="object-cover w-full h-full rounded-md"
-          />
+          {isDark ? (
+            <Image
+              src="/media/keerti_profile_image_dark_theme.jpeg"
+              alt="Keerti Profile Image"
+              width={500}
+              height={500}
+              className="object-cover w-full h-full rounded-md"
+            />
+          ) : (
+            <Image
+              src="/media/keerti_profile_image_light_theme.jpg"
+              alt="Keerti Profile Image"
+              width={500}
+              height={500}
+              className="object-cover w-full h-full rounded-md"
+            />
+          )}
         </div>
       </div>
     </section>
