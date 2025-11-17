@@ -40,6 +40,17 @@ const Button = ({ text }: { text: string }) => {
         ></span>
       </span>
     </a>
+  ) : text === "Work with me!" ? (
+    <a href="mailto:keertibhatnagar.work@gmail.com?subject=Collaboration%20Inquiry&body=Hi%20Keerti,%0D%0A%0D%0AI%E2%80%99m%20interested%20in%20discussing%20a%20potential%20collaboration.%20Please%20let%20me%20know%20how%20we%20can%20proceed.%0D%0A%0D%0AThanks!">
+      <button className={buttonClasses}>
+        {text}
+        <span className="absolute inset-0 overflow-hidden">
+          <span
+            className={`absolute w-[150%] h-[150%] top-0 left-[-75%] bg-gradient-to-r from-transparent ${shineColor} to-transparent rotate-45 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-600 ease-in-out`}
+          ></span>
+        </span>
+      </button>
+    </a>
   ) : (
     <button className={buttonClasses}>
       {text}
