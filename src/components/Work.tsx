@@ -90,7 +90,7 @@ const Work = () => {
     >
       <div className="flex items-center gap-3 sm:gap-4 mb-12 sm:mb-14 md:mb-16">
         <h2 className="text-xl sm:text-2xl md:text-3xl text-[var(--lightest-slate)] font-bold whitespace-nowrap">
-          Some Things I've Built
+          Some Things I&apos;ve Worked on
         </h2>
         <div className="flex-1 h-[1px] bg-[var(--lightest-navy)]"></div>
       </div>
