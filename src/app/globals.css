@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@import 'swiper/css';
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
 
 :root {
   /* Dark theme colors (default) */
@@ -128,4 +131,9 @@ body {
 .scrollbar-hide {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
+}
+
+/* Smooth transitions for slides */
+.swiper-wrapper {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
 }

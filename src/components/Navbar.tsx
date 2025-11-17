@@ -10,7 +10,9 @@ const Navbar = () => {
   useEffect(() => {
     // Get initial theme from HTML element or cookie
     const htmlElement = document.documentElement;
-    const currentTheme = htmlElement.classList.contains("dark") ? "dark" : "light";
+    const currentTheme = htmlElement.classList.contains("dark")
+      ? "dark"
+      : "light";
     setTheme(currentTheme);
   }, []);
 
@@ -23,7 +25,7 @@ const Navbar = () => {
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: "smooth"
+        behavior: "smooth",
       });
       setIsMenuOpen(false); // Close menu on mobile after clicking
     }
@@ -31,7 +33,7 @@ const Navbar = () => {
 
   const toggleTheme = async () => {
     const newTheme = theme === "light" ? "dark" : "light";
-    
+
     // Update HTML class immediately for instant feedback
     document.documentElement.classList.remove("light", "dark");
     document.documentElement.classList.add(newTheme);
@@ -55,17 +57,20 @@ const Navbar = () => {
     <nav className="flex justify-between items-center px-4 sm:px-6 md:px-8 lg:px-12 py-3 sm:py-4 md:py-5 lg:py-6 sticky top-0 z-50 bg-[var(--background)]/80 backdrop-blur-sm">
       <div className="flex justify-center items-center">
         {/* Hexagon Shape */}
-        <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 relative cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+        <div
+          className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 relative cursor-pointer"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
           {/* Hexagon Background */}
           <div className="absolute inset-0 bg-[var(--primary-green)] clip-hexagon"></div>
-          
+
           {/* Letter K */}
           <div className="absolute inset-0 flex justify-center items-center text-[var(--dark-navy)] text-xs sm:text-sm font-bold">
             K
           </div>
         </div>
       </div>
-      
+
       {/* Desktop Navigation */}
       <div className="hidden md:flex justify-end gap-10">
         <ul className="flex gap-6 lg:gap-10 items-center font-mono text-xs lg:text-sm">
@@ -204,7 +209,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed top-[73px] left-0 right-0 bg-[var(--background)]/95 backdrop-blur-sm border-b border-[var(--lightest-navy)] transition-all duration-300 md:hidden ${
+        className={`fixed top-[50px] left-0 right-0 bg-[var(--background)]/95 backdrop-blur-sm border-b border-[var(--lightest-navy)] transition-all duration-300 md:hidden ${
           isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       >
