@@ -44,7 +44,7 @@ export default function ExperienceTabs() {
   return (
     <section
       id="experience"
-      className="min-h-screen max-w-[1000px] flex justify-start mx-auto px-4 sm:px-6 md:px-0 py-12 sm:py-16 md:py-20"
+      className="lg:min-h-screen max-w-[1000px] flex justify-start mx-auto px-4 sm:px-6 md:px-0 py-12 sm:py-16 md:py-20"
     >
       <div className="flex flex-col w-full">
         <h2 className="text-xl sm:text-2xl md:text-3xl text-[var(--lightest-slate)] font-bold mb-6 sm:mb-8">
