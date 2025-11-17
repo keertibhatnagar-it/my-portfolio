@@ -15,7 +15,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://keerti-bhatnagar.vercel.app"), // Change this!
+  metadataBase: new URL("https://keerti-bhatnagar.vercel.app"),
   title: {
     default: "Keerti Bhatnagar",
     template: "%s | Keerti Bhatnagar",
@@ -25,11 +25,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Keerti Bhatnagar",
     description: "bringing ideas to life with code!",
-    url: "/",
+    url: "https://keerti-bhatnagar.vercel.app",
     siteName: "Keerti Bhatnagar",
     images: [
       {
-        url: "/og-image.jpeg",
+        url: "https://keerti-bhatnagar.vercel.app/og-image.jpeg",
         width: 1200,
         height: 630,
         alt: "Keerti Bhatnagar",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Keerti Bhatnagar",
     description: "bringing ideas to life with code!",
-    images: ["/og-image.png"],
+    images: ["https://keerti-bhatnagar.vercel.app/og-image.jpeg"],
   },
 
   icons: {
